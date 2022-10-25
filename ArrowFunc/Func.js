@@ -106,6 +106,11 @@ const user = {
 };
 
 
+//DESESTRUTURAÇÃO ADICIONANDO VALOR DE KEY DE UM OBJETO A UMA VARIÁVEL
+//const address = user.endereco;
+const {endereco, nome} = user
+
+
 //EXPRESSÕES
 //in retorna true ou false
 //Object.keys retorna todas as chaves o array
@@ -118,7 +123,9 @@ const user = {
 //document.body.innerText = Object.keys(user)
 //document.body.innerText = Object.values(user)
 //document.body.innerText = JSON.stringify(Object.values(user))
-document.body.innerText = JSON.stringify(Object.entries(user))
+//document.body.innerText = JSON.stringify(Object.entries(user))
+document.body.innerText = JSON.stringify({endereco, nome})
+
 
 
 
