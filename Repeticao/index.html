@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estrutura de repetição</title>
+    <style>
+        .alert{
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <h1>Trabalhando com estrutura de repetição</h1>
@@ -18,7 +23,9 @@
     </select>
     <div id="ex"></div>
     <div id="cont"></div>
+    <div id="result"></div>
     <button id="btn">Criar</button>
+    <button id="stop">Parar tempo</button>
 
 
     <script>
@@ -26,6 +33,8 @@
         const select = document.querySelector("#sl");
         const div = document.querySelector("#ex")
         const div_cont = document.querySelector("#cont")
+        const btn_stop = document.querySelector("#stop")
+        const div_result = document.querySelector("#result")
     
 
         btn.addEventListener("click",()=>{
@@ -74,13 +83,30 @@
         numero6 /= 2
         console.log(numero6)
 
+        
         var contador = 10;
         
-        while (contador > 0) {
-            
-        }
+        const inter = setInterval(countDown, 1000);
         
-      
+        function countDown() {
+            if (contador == 0) {
+                const p = document.createElement("p")
+                p.classList.add("alert")
+                p.innerText = "Tempo esgotado"
+                div_result.appendChild(p)
+                clearInterval(inter)
+            }
+            div_cont.innerText = contador;
+            contador--;
+        }
+
+        
+
+       
+
+        
+
+  
     </script>
 </body>
 </html>
