@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto</title>
+</head>
+<body>
+    <h1>Trabalhando com objeto em js</h1>
+
+    <div id="ex"></div>
+
+
+
+    <script>
+        const div = document.querySelector("#ex");
+
+        const obj = {
+            nome: "Raí vaz",
+            idade: 24,
+            solteiro: false,
+            carro:{
+                cor: 'Preto',
+                modelo: 'Lancer',
+                ano: 2014
+            },
+        }
+
+
+        //adicionando propiedade no objeto
+        obj.graduacao = false;
+        console.log(obj.graduacao)
+
+        //imprimindo objeto
+        console.log(Object.values(obj))
+        const obj_to_string = JSON.stringify(obj)
+        console.log(obj_to_string)
+
+        var data = new Date();
+        console.log(data.toLocaleDateString('BRL'))
+     
+
+        div.innerText = "O modelo do meu carro é: " + obj.carro.modelo
+        nome = "1"
+        if (1 !== nome) {
+            console.log("Diferente")
+        }else{
+            console.log("Iguais")
+        }
+
+
+    </script>
+</body>
+</html>

@@ -7,6 +7,8 @@
     <title>Tipos de dados</title>
 </head>
 <body>
+
+    <button id="btn">Click</button>
     <script>
         var num = 1;
         var num2 = 1.5;
@@ -15,6 +17,17 @@
         console.log(typeof num);
         console.log(typeof num2);
         console.log(typeof text)
+
+        const btn = document.querySelector("#btn");
+
+        btn.addEventListener("click", (e)=>{
+            console.log(typeof e)
+            console.log(e)
+            console.log(Object.values(e))
+            if (e) {
+                console.log('Clicou')
+            }
+        })
     </script>
     
 </body>

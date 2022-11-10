@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <h1>Trabalhando com Array</h1>
+    <div id="ex"></div>
+
+
+
+    <script>
+        array1 = [1,2,3,4,5];
+        array2 = [1,'Raí',false,{data:"10/11", dia:"Quinta-feira"}];
+
+        const div = document.querySelector("#ex");
+
+        //inserindo item em um array
+        array1.push(6)
+        //console.log(array1[5])
+
+        array2.map((valor) => {
+            console.log(valor)
+        })
+
+
+        //acessando dados de um objeto dentro de um array
+        div.innerText = array2[3].dia
+
+
+    </script>
+</body>
+</html>
