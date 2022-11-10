@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrutura de repetição</title>
+</head>
+<body>
+    <h1>Trabalhando com estrutura de repetição</h1>
+    
+    
+    <select id="sl">
+        <option selected disabled>--Escolha a quantidade de campos--</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <div id="ex"></div>
+    <div id="cont"></div>
+    <button id="btn">Criar</button>
+
+
+    <script>
+        const btn = document.querySelector("#btn");
+        const select = document.querySelector("#sl");
+        const div = document.querySelector("#ex")
+        const div_cont = document.querySelector("#cont")
+    
+
+        btn.addEventListener("click",()=>{
+            var qnt = select.value;
+            var i = 1;
+            div.innerHTML = '';
+            while (i <= qnt) {
+                const p = document.createElement("p");
+                p.innerText = "Paragráfo " + i;
+                div.appendChild(p)
+
+                i++
+            }
+        })
+
+        /*OPERADORE DE ATRIBUIÇÃO
+            variável++ /atribui mais um ao valor da variável
+            variável-- /subtrai -1 da variável
+            variável += valor /Soma o valor mais a variável
+            variável -= valor /Subtrai o valor da variável
+            variável *= valor /Multiplica o valor mais com a variável
+            variável /= valor /Dividi o valor pela variável
+        
+        */
+        var numero1 = 10;
+        numero1++
+        console.log(numero1)
+        //-----------------
+        var numero2 = 20;
+        numero2--
+        console.log(numero2)
+        //-----------------
+        var numero3 = 20;
+        numero3 += 5
+        console.log(numero3)
+        //-----------------
+        var numero4 = 50;
+        numero4 -= 5
+        console.log(numero4)
+        //-----------------
+        var numero5 = 20;
+        numero5 *= 2
+        console.log(numero5)
+        //-----------------
+        var numero6 = 20;
+        numero6 /= 2
+        console.log(numero6)
+
+        var contador = 10;
+        
+        while (contador > 0) {
+            
+        }
+        
+      
+    </script>
+</body>
+</html>
