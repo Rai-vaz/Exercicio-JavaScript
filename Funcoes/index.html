@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+    <style>
+        div#main{
+            display: flex;
+            justify-content: space-between;
+            
+        }
+        .square{
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+            text-align: center;
+            cursor: pointer;
+           
+           
+        }
+
+        .red{
+            background-color: brown;
+        }
+
+        p{
+            text-align: center;
+            margin-top: 40%;
+            font-size: 30px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Trabalhando com Funções</h1>
+    <div id="main">
+        
+        <div onclick="Click(0)" class="square"><p>1</p></div>
+        <div onclick="Click(1)" class="square"><p>2</p></div>
+        <div onclick="Click(2)" class="square"><p>3</p></div>
+        <div onclick="Click(3)" class="square"><p>4</p></div>
+    </div>
+
+
+
+    <script>
+        const div = document.getElementsByClassName("square");
+        const body = document.getElementsByTagName("body");
+        const ul = document.createElement("ul");
+        body[0].appendChild(ul);
+
+
+
+        function Click(index) {
+            for (let i = 0; i < div.length; i++) {
+                if (index != i) {
+                    div[i].classList.remove("red");
+                }
+            }
+            div[index].classList.add("red");
+        }
+
+
+        
+        //------------------------------------------------
+        var frutas = ['Banana', 'Maçã', 'Uva', 'Morango'];
+
+        for (let f = 0; f < frutas.length; f++) {
+            const li = document.createElement("li");
+            li.innerText = frutas[f];
+            ul.appendChild(li)
+            
+        }
+    </script>
+    
+</body>
+</html>

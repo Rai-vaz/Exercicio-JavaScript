@@ -26,15 +26,24 @@
     <div id="result"></div>
     <button id="btn">Criar</button>
     <button id="stop">Parar tempo</button>
+    <p>Laço de repetição com o For</p>
+    <div id="ex_for"></div>
+    <main></main>
 
 
     <script>
+        const corpo = document.getElementsByTagName("main");
         const btn = document.querySelector("#btn");
         const select = document.querySelector("#sl");
         const div = document.querySelector("#ex")
         const div_cont = document.querySelector("#cont")
         const btn_stop = document.querySelector("#stop")
         const div_result = document.querySelector("#result")
+        const div_ex_for = document.querySelector("#ex_for");
+        
+    
+        
+        
     
 
         btn.addEventListener("click",()=>{
@@ -44,8 +53,7 @@
             while (i <= qnt) {
                 const p = document.createElement("p");
                 p.innerText = "Paragráfo " + i;
-                div.appendChild(p)
-
+                div.appendChild(p);
                 i++
             }
         })
@@ -101,12 +109,64 @@
         }
 
         
+    //REPETIÇÃO COM FOR
+       for (let index = 0; index <= 10; index++) {
+            const p = document.createElement("p");
+            p.innerText = "Repetição: " + index;
+            div_ex_for.appendChild(p)
+        }
 
-       
+        var array_ex = [1,2,3,4,5,6];
+
+        for (let x = 0; x < array_ex.length; x++) {
+            const el = document.createElement("p");
+            el.innerText = `Idex número: ${array_ex[x]}`
+            corpo[0].appendChild(el)            
+        }
+
+        console.log("----------------------------")
+
+        //BREAK AND CONTINUE
+
+        //BREAK
+        for (let k = 0; k < 100; k += 10) {           
+            if (k == 60) {
+                console.log("Break executado")
+                break;         
+            }
+            console.log(k)
+        }
+        console.log("----------------------------")
+
+        //CONTINUE
+        for (let k = 0; k <= 100; k += 10) {           
+            if (k == 60 || k == 90) {
+                console.log("Continue executado")
+                continue;         
+            }
+            console.log(k)
+        }
 
         
 
   
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>

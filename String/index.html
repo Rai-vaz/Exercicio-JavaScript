@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método String</title>
+</head>
+<body>
+    <h1>Trabalhando com método de String</h1>
+
+
+    <script>
+        var nome = 'Raí';
+        var frase = "O rato roeu a roupa do rei de Roma"
+        
+        console.log(nome.length)
+
+        //espaço também conta
+        console.log(frase.indexOf('rei'))
+
+        //slice
+        var rei = frase.slice(23, 26);
+        console.log(rei)
+
+        //replace
+        var novaFrase = frase.replace('rei', 'teste');
+        console.log(novaFrase)
+
+        //lowerCase
+        console.log(frase.toLowerCase())
+
+        //upperCase
+        console.log(frase.toUpperCase())
+
+        //trim
+        nome2 = "   Raí   "
+        console.log(nome2)
+        console.log(nome2.trim())
+
+        //split
+        var linguagens = "PHP, JavaScript, CSS, HTML"
+        var nome3 = "Rai vaz"
+        console.log(nome3.split(""))
+        console.log(linguagens.split(','))
+
+        //lastIndexOf
+        var frase2 = "Pegar teste na ultima vez que encontrar teste"
+        console.log(frase2.lastIndexOf("teste"));
+
+
+
+
+    </script>
+    
+</body>
+</html>
