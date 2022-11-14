@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando o dom</title>
+</head>
+<body>
+    <h1 id="title">Manipulando o DOM</h1>
+    <h2 class="subtitle">Título dois</h2>
+    <h3 class="remover">Titulo a ser removido</h3>
+    <div id="container">
+        <p>Conteúdo de cima</p>
+        <br id="divisao">
+        <p>Parágrafo a ser removido</p>
+        <hr>
+        <p>Conteúdo a baixo</p>
+        <aside>
+            <h4 id="item_replace">Elemento a ser trocado</h4>
+        </aside>
+        <button id="btn" alt="botao">Click</button>
+        <a href="#">Google</a>
+        <a href="#">Facebook</a>
+    </div>
+    
+
+
+    <script>
+        var title = document.querySelector("#title");
+        var subtitle = document.querySelector(".subtitle");
+
+        //PROPIEDADES DO OBJETO DOCUMENT
+        console.log(document.body);
+        console.log(document.head);
+        console.log(document.title);
+        //todos os links existente na página
+        console.log(document.links[0].textContent = 'youtube');
+
+        //innerHTML
+        title.innerHTML = "Texto alterado com a propiedade innerHTML!"
+
+        //textContent mais recomendado
+        subtitle.textContent = "Texto alterado com a propiedade textContent"
+
+        //criando elemento
+        var p = document.createElement("p");
+        var texto = document.createTextNode('Conteúdo do parágrafo');
+        p.appendChild(texto);
+        var body = document.querySelector('body');
+        body.appendChild(p);
+
+        var container = document.querySelector("#container");
+        var span = document.createElement("span");
+        span.appendChild(document.createTextNode('Texto do span'));
+        container.appendChild(span);
+
+        //removendo elemento filho
+        var p_remove = document.querySelector("#container p");
+        container.removeChild(p_remove);
+
+        //remover elemento
+        var title_remove = document.querySelector(".remover");
+        title_remove.remove();
+
+        //insirindo elemento antes
+        var divisao = document.getElementById("divisao");
+        var div_ex = document.createElement("div");
+        div_ex.classList.add("div-before");
+        //inserindo div_ex antes do hr divisao
+        container.insertBefore(div_ex, divisao)
+
+        //trocando elemento
+        //elemento existente
+        var h4 = document.querySelector("#item_replace");
+
+        var h5 = document.createElement("h5");
+        h5.classList.add("classe-exemplo");
+        var texto_h5 = document.createTextNode("Texto do replace do h4 pelo h5");
+        h5.appendChild(texto_h5);
+
+        var pai = h4.parentNode;
+        //trocando h4 pelo h5
+        pai.replaceChild(h5, h4)
+
+
+        //adicionando atributo
+        //nome do atributo, valor
+        container.setAttribute('class', 'main-container');
+
+        var btn = document.querySelector("#btn");
+        btn.addEventListener('click',() => {
+            btn.setAttribute('disabled', 'disabled');
+        });
+
+
+        //removendo atributo
+        btn.removeAttribute('alt')
+
+        //adicionando CSS
+        btn.style.cssText = "background-color: blue; color:white; cursor:pointer;"
+
+        
+
+
+    </script>
+</body>
+</html>

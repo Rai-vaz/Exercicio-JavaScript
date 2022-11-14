@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <h1>Manipulando o DOM</h1>
+    <h2>Título principal</h2>
+    <p id="paragrafo">Este é o parágrafo!</p>
+    <ul id="lista">
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+        <li class="item">Item 4</li>
+
+    </ul>
+
+    <ul id="lista2">
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <div id="ex"></div>
+
+
+    <!--CÓDIGO JAVASCRIPT-->
+    <script>
+        //tag
+        var titulo = document.getElementsByTagName('h2')[0];
+        console.log(titulo)
+
+        //id
+        var paragrafo = document.getElementById("paragrafo");
+        console.log(paragrafo)
+
+        //classe
+        var itensDaLista = document.getElementsByClassName('item');
+        console.log(itensDaLista)
+
+        //QuerySelectorAll
+        var itemQuery = document.querySelectorAll('#lista2 li');
+        console.log(itemQuery);
+
+        var itensQuery2 = document.querySelectorAll("#lista2 .item");
+        console.log(itensQuery2);
+
+        //QuerySelector
+        //pega apenas o primeiro elemento que encontra
+        var primeiro_li = document.querySelector("#lista2 .item");
+        console.log(primeiro_li)
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeOut Interval</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        #bem-vindo{
+            width: 100vw;
+            padding: 30px;
+            color: white;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="bem-vindo">Seja bem-vindo</div>
+    
+</body>
+
+<script>
+
+    var bem_vindo = document.querySelector("#bem-vindo");
+    setTimeout(() => {
+        bem_vindo.style.display = "none"
+    }, 5000);
+
+
+   /* setInterval(() => {
+        alert("Olá");
+    }, 5000);*/
+
+    //CLEAR TIMEOUT
+    var x = 0;
+
+    var Timeout_test = setTimeout(() => {
+        console.log('O x é igual a: 0');
+    }, 1500);
+
+    x = 6;
+
+    if (x > 0) {
+        clearTimeout(Timeout_test);
+        console.log('O time out foi limpo');
+    }
+
+    //CLEAR INTERVAL
+    let cont = 0;
+
+   var interval = setInterval(() => {
+        cont++;
+        console.log(cont)
+        if (cont == 20) {
+            limpa_intervalo();
+            console.log("Intervalo parado");
+        }
+    }, 1000);
+    
+
+    function limpa_intervalo() {
+        clearInterval(interval);
+    }
+
+    
+
+
+
+</script>
+</html>

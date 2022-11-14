@@ -41,11 +41,32 @@
         //console.log(Array.isArray(array1))
 
         //adicionando no meio
+        //splice
+                    //depois do 2º não apaga nenhum e adiciona o 99
+        /*array1.splice(2, 0, 99);
+        console.log(array1);*/
+
+        //removendo com splice
+               //depois do 3º remove 2
+        /*array1.splice(3, 2);
+        console.log(array1)*/
+
+        //retornando o indece do valor
+        console.log(array1.indexOf(5));
+
         
 
        /* array2.map((valor) => {
             console.log(valor)
         })*/
+
+        //transformando array em string
+        const texto = ['Aprendendo', 'Array', 'em', 'javascript'];
+                            //separador
+        console.log(texto.join(" "));
+
+        //revertendo array
+        console.log(texto.reverse());
 
 
         //acessando dados de um objeto dentro de um array

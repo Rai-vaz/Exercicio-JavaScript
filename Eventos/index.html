@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>
+        div{
+            height: 2500px;
+        }
+        #teste{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            position: absolute;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eventos com JS</h1>
+    <button id="btn">CLICK</button>
+    <div></div>
+    <div id="teste"></div>
+
+
+    <script>
+        //EVENTOS EM JS
+        var title  = document.getElementsByTagName("title")[0];
+        var div = document.querySelector("#teste");
+
+
+        //ONLOAD
+        window.onload = function () {
+            console.log("Dom carregado!!");
+        }
+
+        var btn = document.querySelector("#btn")
+
+        //CLICK
+        btn.addEventListener('click', function() {
+            this.style.border = "2px solid red";
+        })
+
+
+
+        //DBL CLICK
+        btn.addEventListener('dblclick', function() {
+            this.style.color = "red";
+        })
+
+
+        //MOUSE ENTER
+        btn.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = "green";
+        })
+
+
+
+        //MOUSEOUT
+        btn.addEventListener('mouseout', function() {
+            this.style.backgroundColor = "gray";
+        })
+
+        //MOUSEOVER
+        div.addEventListener('mouseover', function () {
+            this.style.backgroundColor = 'red'
+        })
+
+        //ONRESIZE
+        window.addEventListener('resize', function() {
+            btn.style.backgroundColor = "yellow";
+        })
+
+        //SCROLL
+        document.addEventListener('scroll', function() {
+            title.textContent = "Teste scroll"
+        })
+
+        //KEYDOWN
+        document.addEventListener('keydown', function (event) {
+            //detalhes do evento
+            //console.log(event)
+            //descobrindo a tecla
+            console.log(event.key)
+        })
+
+        //KEYUP
+        document.addEventListener('keyup', function (event) {  
+            if (event.key === 'Enter') {
+                console.log("Soltou tecla enter");
+            }
+        })
+    </script>
+    
+</body>
+</html>

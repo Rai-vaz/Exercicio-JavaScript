@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando Objeto</title>
+</head>
+<body>
+    <h1>Nossos objetos</h1>
+
+    <div id="ex"></div>
+
+
+
+    <script>
+       //criando um objeto
+       //Não usar arrow function dentro de objeto
+       //this serve para acessar qualquer método ou propiedade de dentro do própio objeto
+       let pessoa = {
+            nome: 'Raí',
+            idade: 24,
+            falar : function(){
+                alert("Falando...")
+            },
+            soma: function(a, b) {
+                return a + b;
+            },
+            saudacao: function() {
+                return 'Sr ' + this.nome;
+            },
+            dizerNome: function(){
+                console.log("O meu nome é " + this.nome);
+            },
+            aniversario: function(){
+                this.idade += 1;
+            }
+       }
+
+       const div = document.getElementById("ex");
+       //div.innerText = pessoa.falar();
+       //div.innerText = pessoa.soma(2, 3);
+       div.innerText = 'Olá ' + pessoa.saudacao();
+       pessoa.dizerNome();
+
+       //chamando idade antes de fazer aniversário
+       console.log(pessoa.idade);
+
+       //fazendo 2 aniversário antes de chamar a propiedade idade
+       pessoa.aniversario();
+       pessoa.aniversario();
+
+       console.log(pessoa.idade);
+       
+
+    </script>
+</body>
+</html>

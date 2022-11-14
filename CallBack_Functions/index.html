@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Back Functions</title>
+</head>
+<body>
+    <h1>Trabalhando com call back functions</h1>
+
+
+    <script>
+        //call back function
+        function exibir(op) {
+            console.log("O resultado da operação é: " + op);
+
+        }
+
+        function soma(a, b) {
+            var op = a + b;
+            exibir(op)
+        }
+
+        function multiplicacao(a, b) {
+            var op = a * b;
+            exibir(op)
+        }
+
+        soma(3, 2);
+
+        multiplicacao(5, 10);
+
+    </script>
+    
+</body>
+</html>
