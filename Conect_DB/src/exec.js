@@ -4,12 +4,12 @@
     await Produto.sync();
 
     //adicionando produto no banco
-    /*const novoProduto = await Produto.create({
+    const novoProduto = await Produto.create({
         id: 4,
         nome: 'Mesa',
         preco: 250,
         descricao: 'Mesa para sala'
-    });*/
+    });
 
     /*const listar = await Produto.findAll();*/
     /*const produto_alter = await Produto.findAll({

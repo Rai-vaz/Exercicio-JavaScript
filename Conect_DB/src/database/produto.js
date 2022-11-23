@@ -7,10 +7,10 @@ const connect = new Sequelize(acessConfig);
 
 
 //criando um modelo de tabela
-const Produto = connect.define('Produto', {
+/*const Produto = connect.define('Produto', {
     id: {
-        autoIncrement: true,
         type: DataTypes.INTEGER,
+        autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
@@ -19,7 +19,24 @@ const Produto = connect.define('Produto', {
         allowNull: false
     },
     preco: DataTypes.DECIMAL,
-    descricao: DataTypes.STRING
+    descricao: DataTypes.STRING,
+});*/
+
+const Cliente = connect.define('Cliente', {
+    id: {
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
+    },
+    nome: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    cidade: DataTypes.STRING,  
 });
 
-module.exports = Produto;
+
+
+
+/*module.exports = Produto;*/
